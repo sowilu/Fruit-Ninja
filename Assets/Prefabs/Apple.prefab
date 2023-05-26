@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3536392538418058076}
   - component: {fileID: 8739180684944815794}
   - component: {fileID: -4528532126865676266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Apple
   m_TagString: Fruit
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &-4528532126865676266
 MonoBehaviour:
@@ -88,6 +88,10 @@ PrefabInstance:
     - target: {fileID: 199366, guid: 771701ab9389e4777bceb549bc0f3e2a, type: 3}
       propertyPath: m_Name
       value: Apple_G_Front
+      objectReference: {fileID: 0}
+    - target: {fileID: 199366, guid: 771701ab9389e4777bceb549bc0f3e2a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 404086, guid: 771701ab9389e4777bceb549bc0f3e2a, type: 3}
       propertyPath: m_RootOrder
@@ -150,6 +154,10 @@ PrefabInstance:
     - target: {fileID: 127060, guid: 0d38d376cef94456c9aee204cfd71cd6, type: 3}
       propertyPath: m_Name
       value: Apple_G_Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 127060, guid: 0d38d376cef94456c9aee204cfd71cd6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 495700, guid: 0d38d376cef94456c9aee204cfd71cd6, type: 3}
       propertyPath: m_RootOrder

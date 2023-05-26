@@ -36,18 +36,25 @@ public class Spawner : MonoBehaviour
         
         for (int i = 0; i < count; i++)
         {
-            var fruitPrefab = fruits[Random.Range(0, fruits.Count)];
-            var position = new Vector3(Random.Range(-screenBounds.x / 3, screenBounds.x / 3), transform.position.y, 0);
-            var fruit = Instantiate(fruitPrefab, position, Quaternion.identity);
-            
-            //toss fruit up with physics
-            fruit.GetComponent<Rigidbody>().AddForce(Vector3.up * 15, ForceMode.Impulse);
+            TossRandomFruit();
 
             var waitTime = Random.Range(0, 1 / spawnRate);
             yield return new WaitForSeconds(waitTime);
         }
 
         yield return new WaitForSeconds(timeBetweenWaves);
+    }
+
+    void TossRandomFruit()
+    {
+        var fruitPrefab = fruits[Random.Range(0, fruits.Count)];
+        var position = new Vector3(Random.Range(-screenBounds.x / 3, screenBounds.x / 3), transform.position.y, 0);
+        var fruit = Instantiate(fruitPrefab, position, Quaternion.identity);
+        
+        var tossDirection = Vector3.up * 15 + Vector3.right * Random.Range(-2, 2);
+            
+        //toss fruit up with physics
+        fruit.GetComponent<Rigidbody>().AddForce(tossDirection, ForceMode.Impulse);
     }
 
 
