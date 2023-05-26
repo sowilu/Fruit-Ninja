@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fruit
+  - Cursor
   layers:
   - Default
   - TransparentFX

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    public float speed = 7;
+    public float speed = 100;
     private Vector3 direction;
+    
     void Start()
     {
         direction.x = Random.Range(-1, 1);

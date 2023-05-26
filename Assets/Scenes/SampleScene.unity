@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,11 +136,11 @@ GameObject:
   - component: {fileID: 12794464}
   m_Layer: 0
   m_Name: Cursor
-  m_TagString: Untagged
+  m_TagString: Cursor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!96 &12794462
 TrailRenderer:
   serializedVersion: 2
@@ -183,10 +183,10 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.3
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -271,10 +271,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &12794464
-SphereCollider:
+--- !u!136 &12794464
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -283,9 +283,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 2.5, z: 0}
+  m_Radius: 0.22
+  m_Height: 6.17
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &629621647
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +321,22 @@ MonoBehaviour:
   - {fileID: 5831776604575341738, guid: c61101f01d86f46c492b9884334c3395, type: 3}
   - {fileID: 1142071228655586705, guid: 020f1f14aa10f4025b71696df23e85fb, type: 3}
   - {fileID: 2406234041012536619, guid: 4a32d62d84f2c4129a3fc9d13b58119c, type: 3}
+  - {fileID: 5489005472868226381, guid: 0f34303d6a2fd9541bd49c5bf4aad761, type: 3}
+  - {fileID: 3878108262965389514, guid: 6d45b0c931ed504498425b6150106075, type: 3}
+  - {fileID: 4729605372182694433, guid: 2f6f76d1452a7f045b336657997a5ecd, type: 3}
+  - {fileID: 907728572987369345, guid: 124c018d4586998429a2a21bcf8e0d7e, type: 3}
+  - {fileID: 4689026361679797838, guid: 10cde47ff3d9e1547a41f114e5059b7c, type: 3}
+  - {fileID: 638250289222270679, guid: be7f1f088bdbf7a46ab01220d497b524, type: 3}
+  - {fileID: 6328998647867907741, guid: 35c3d514ece60b245b4825cb616adb53, type: 3}
+  - {fileID: 6592246724341421011, guid: 86c8689e8e204914e93495ab7dba9d11, type: 3}
+  - {fileID: 4844351301626602083, guid: f11f4f66b606c334194ef8c263e68275, type: 3}
+  - {fileID: 6665631419611996003, guid: e5505133f4eb22f429698829df20aea9, type: 3}
+  - {fileID: 691881166940218359, guid: 70521e3c585787e409d9284f24933764, type: 3}
+  - {fileID: 6447054996613546228, guid: 452b35cee23537243b3381552d41de40, type: 3}
+  - {fileID: 9073916562284158573, guid: f6833948a3b0b5942b3aa9eb0e0ca097, type: 3}
+  - {fileID: 3807759655568370750, guid: ddf34f3c21deae745a7a97387aaf2937, type: 3}
+  - {fileID: 8133699317608481692, guid: 24354b4f3caa7aa48a7ad95c63e9b770, type: 3}
+  - {fileID: 3507747559051844605, guid: 65516ed55bca027439f7dec1e59f06a4, type: 3}
   maxFruits: 5
   spawnRate: 2
   timeBetweenWaves: 5
@@ -336,7 +353,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -582,7 +599,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460256010
 GameObject:
@@ -694,8 +711,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1957674225}
+  - component: {fileID: 1957674226}
   m_Layer: 0
-  m_Name: Cursor Controller
+  m_Name: Touch Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,8 +732,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1957674226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957674224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ef582b7e36ca04cb6bef5a111c3617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 12794463}
 --- !u!1 &2062354067
 GameObject:
   m_ObjectHideFlags: 0
