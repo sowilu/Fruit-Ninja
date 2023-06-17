@@ -28,12 +28,14 @@ public class Fruit : MonoBehaviour
                 children.Add(child);
             }
             
+            Score.instance.Points++;
+
             //spawn juice
             var juice = Instantiate(juiceVfx, transform.position, Quaternion.identity);
             var main = juice.GetComponent<ParticleSystem>().main;
             main.startColor = juiceColor;
 
-            
+
             var direction = Vector3.right;
             foreach(Transform child in children)
             {
