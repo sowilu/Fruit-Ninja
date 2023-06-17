@@ -13,11 +13,14 @@ public class Spawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
 
     private Vector2 screenBounds;
+    private AudioSource audioSource;
+    
     
     private void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));   
-        
+        audioSource = GetComponent<AudioSource>();
+
         StartCoroutine(SpawnTest());
     }
 
@@ -47,6 +50,10 @@ public class Spawner : MonoBehaviour
 
     void TossRandomFruit()
     {
+        //set random pitch
+        audioSource.pitch = Random.Range(0.8f, 1.2f);
+        audioSource.PlayOneShot(audioSource.clip);
+
         var fruitPrefab = fruits[Random.Range(0, fruits.Count)];
         var position = new Vector3(Random.Range(-screenBounds.x / 3, screenBounds.x / 3), transform.position.y, 0);
         var fruit = Instantiate(fruitPrefab, position, Quaternion.identity);

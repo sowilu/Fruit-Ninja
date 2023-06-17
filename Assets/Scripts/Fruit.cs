@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class Fruit : MonoBehaviour
 {
+    public GameObject juiceVfx;
+    public Color juiceColor;
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.transform.CompareTag("Cursor"))
@@ -24,7 +27,13 @@ public class Fruit : MonoBehaviour
             {
                 children.Add(child);
             }
+            
+            //spawn juice
+            var juice = Instantiate(juiceVfx, transform.position, Quaternion.identity);
+            var main = juice.GetComponent<ParticleSystem>().main;
+            main.startColor = juiceColor;
 
+            
             var direction = Vector3.right;
             foreach(Transform child in children)
             {
