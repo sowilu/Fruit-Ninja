@@ -12,11 +12,10 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     public UnityEvent<int> OnCombo;
+    public float comboTimer = 1f;
 
 
-
-    private int combo = 0;
-    private float comboTimer = 0.5f;
+    private int combo = 1;
     private float lastHit = 0;
     private int score = 0;
 
@@ -33,11 +32,11 @@ public class Score : MonoBehaviour
 
                 OnCombo.Invoke(combo);
             }
-            else
+            else if(combo > 1)
             {
-                print(combo);
+                print("Added combo: " + combo);
                 score += combo;
-                combo = 0;
+                combo = 1;
                 OnCombo.Invoke(0);
             }
             lastHit = Time.time;
