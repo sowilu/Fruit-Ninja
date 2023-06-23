@@ -28,8 +28,8 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            StartCoroutine(StartWave());
             yield return new WaitForSeconds(timeBetweenWaves);
+            StartCoroutine(StartWave());
         }
     }
     
@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
 
-        yield return new WaitForSeconds(timeBetweenWaves);
+        //yield return new WaitForSeconds(timeBetweenWaves);
     }
 
     void TossRandomFruit()
@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
 
         var fruitPrefab = fruits[Random.Range(0, fruits.Count)];
-        var position = new Vector3(Random.Range(-screenBounds.x / 3, screenBounds.x / 3), transform.position.y, 0);
+        var position = new Vector3(Random.Range(-screenBounds.x / 3 * 2, screenBounds.x / 3 * 2), transform.position.y, 0);
         var fruit = Instantiate(fruitPrefab, position, Quaternion.identity);
         
         var tossDirection = Vector3.up * 15 + Vector3.right * Random.Range(-2, 2);

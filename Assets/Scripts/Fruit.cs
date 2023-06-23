@@ -35,6 +35,8 @@ public class Fruit : MonoBehaviour
             var main = juice.GetComponent<ParticleSystem>().main;
             main.startColor = juiceColor;
 
+            //spawn splash
+            Splasher.inst.SpawnParticle(juiceColor, transform.position + Vector3.forward * 3);
 
             var direction = Vector3.right;
             foreach(Transform child in children)
